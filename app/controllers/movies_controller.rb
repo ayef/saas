@@ -38,4 +38,9 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def sort
+    @movie = Movie.order (params[:param] + 'ASC')
+    redirect_to movies_path
+  end
+
 end
